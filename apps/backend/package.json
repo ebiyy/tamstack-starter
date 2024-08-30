@@ -1,0 +1,18 @@
+{
+  "name": "backend",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.5.9",
+    "@blgc/openapi-router": "^0.0.19",
+    "validation-adapters": "^0.0.10",
+    "zod": "^3.23.8",
+    "@repo/openapi": "workspace:*"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "wrangler": "^3.57.2"
+  }
+}

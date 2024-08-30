@@ -1,4 +1,12 @@
 import type { MetaFunction } from "@remix-run/node";
+import createFetchClient from "openapi-fetch";
+import createClient from "openapi-react-query";
+import { paths } from '@repo/openapi'; // OpenAPI-generated types
+
+const fetchClient = createFetchClient<paths>({
+  baseUrl: "http://localhost:8787/",
+});
+const $api = createClient(fetchClient);
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,6 +16,21 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+
+  const { data, error, isLoading } = $api.useQuery(
+    "get",
+    `/pet/${5}`,
+    {
+      params: {
+        path: { petId: 5 },
+      },
+    },
+  );
+
+  if (isLoading || !data) return "Loading...";
+
+  if (error) return `An error occured: ${error}`;
+
   return (
     <div className="font-sans p-4">
       <h1 className="text-3xl">Welcome to Remix</h1>
@@ -19,7 +42,7 @@ export default function Index() {
             href="https://remix.run/start/quickstart"
             rel="noreferrer"
           >
-            5m Quick Start
+            5m Quick Start {data.name}2
           </a>
         </li>
         <li>

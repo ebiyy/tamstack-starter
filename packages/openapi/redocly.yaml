@@ -1,0 +1,5 @@
+apis:
+  core@v1:
+    root: ./openapi.yaml
+    x-openapi-ts:
+      output: ./src/openapi.ts
