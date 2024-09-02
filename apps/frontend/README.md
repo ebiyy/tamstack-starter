@@ -7,7 +7,7 @@
 Run the dev server:
 
 ```shellscript
-npm run dev
+pnpm run dev
 ```
 
 ## Deployment
@@ -15,7 +15,7 @@ npm run dev
 First, build your app for production:
 
 ```sh
-npm run build
+pnpm run build:spa
 ```
 
 Then run the app in production mode:

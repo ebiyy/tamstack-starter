@@ -6,7 +6,10 @@
   "scripts": {
     "clean": "rimraf .turbo node_modules dist build .cache public/build",
     "build": "remix build",
-    "dev": "remix dev",
+    "build:spa": "remix vite:build",
+    "dev": "pnpm run dev:spa --host 0.0.0.0",
+    "dev:ssr": "remix dev",
+    "dev:spa": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
     "typecheck": "tsc"

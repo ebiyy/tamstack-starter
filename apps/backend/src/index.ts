@@ -12,7 +12,7 @@ const app = new Hono()
 app.use(etag(), logger())
 app.use('/*', cors())
 
-app.get('/', (c) => c.text('Hello Cloudflare Workers!'))
+app.get('/', (c) => c.text('Hello Cloudflare Workers!!!'))
 
 export const openApiRouter = createHonoOpenApiRouter<paths>(app);
 
@@ -25,7 +25,7 @@ openApiRouter.get('/pet/{petId}', {
   ),
   handler: (c) => {
     const { petId } = c.req.valid('param'); // Access validated params
-    return c.json({ name: 'Falko', photoUrls: [] }); 
+    return c.json({ name: 'Falko2!!', photoUrls: [] }); 
   },
 },);
 

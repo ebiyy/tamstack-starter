@@ -33,7 +33,7 @@ export default function Index() {
 
   return (
     <div className="font-sans p-4">
-      <h1 className="text-3xl">Welcome to Remix</h1>
+      <h1 className="text-3xl">Welcome to Remix with Capacitor!!!</h1>
       <ul className="list-disc mt-4 pl-6 space-y-2">
         <li>
           <a
@@ -42,7 +42,7 @@ export default function Index() {
             href="https://remix.run/start/quickstart"
             rel="noreferrer"
           >
-            5m Quick Start {data.name}2
+            5m Quick Start {data.name}
           </a>
         </li>
         <li>

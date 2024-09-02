@@ -4,13 +4,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  MetaFunction,
+  MetaFunction,LiveReload
 } from "@remix-run/react";
 import "./tailwind.css";
 import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+
 
 const queryClient = new QueryClient()
 
@@ -28,8 +29,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+      <LiveReload />
         <QueryClientProvider client={queryClient}>
-          {children}
+{children}
         </QueryClientProvider>
         <ScrollRestoration />
         <Scripts />
